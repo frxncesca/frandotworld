@@ -1,18 +1,46 @@
 
 html, body {
   font-family: 'Roboto', sans-serif; 
+  font-size: 18px;
+  color: #313131;
+  margin: 0;
+  padding: 0;
 }
 
-/* h1, h2, h3, h4, h5, h6 {
-  font-family: 'IBM Plex Sans', sans-serif;
-} */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
 
 .home-container {
-  padding:5%;
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .home-container-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.spinner {
+  display: inline-block;
+}
+
+.spinner img {
+    transition: 0.3s ease-in-out;
+    transform-origin: center;
+    animation-name: spin;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* height: 160px; */
+    height: 25%;
+}
+
+.nav {
+  display: inline-block;
 }
 
 @-moz-keyframes spin {
@@ -28,13 +56,73 @@ html, body {
     to {transform:rotate(360deg);}
 }
 
-.spinner img {
-    transition: 0.3s ease-in-out;
-    transform-origin: center;
-    animation-name: spin;
-    animation-duration: 10000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    height: 160px;
+.hello {
+    max-width: 733px;
+    margin: 0 auto;
+    margin-top: 91px;
+    font-size: 25px;
+    margin-bottom: 91px;
 }
 
+.name {
+  text-transform: uppercase;
+}
+
+.description {}
+.special {
+  color: #f6b000;
+}
+
+/*
+ * Case Studies
+ */
+
+.case-studies {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.case-study-wrapper {
+    height: 350px;
+    width: 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50%;
+    cursor: pointer;
+}
+
+.case-study-wrapper:nth-of-type(1){
+    background-color: #f0f0f0;
+    background-image: url(assets/static/static1.PNG);
+}
+
+.case-study-wrapper:nth-of-type(2){
+  background-color: #c6c6c6;
+  background-image: url(assets/static/static2.PNG);
+}
+
+.case-study-wrapper:nth-of-type(3){
+  background-color: #aeaeae;
+  background-image: url(assets/static/static3.PNG);
+}
+
+.case-study-wrapper:nth-of-type(4){
+  background-color: #939393;
+  background-image: url(assets/static/static4.PNG);
+}
+
+.case-study-wrapper:nth-of-type(5){
+  background-color: grey;;
+  background-image: url(assets/static/static5.PNG);
+}
+
+@media (max-width:1100px) {
+  .case-studies {
+    flex-direction: column;
+  }
+
+  .case-study-wrapper {
+    width: 100%;
+  }
+}
