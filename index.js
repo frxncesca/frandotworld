@@ -22,13 +22,75 @@ function main () {
     $(this).css("background-image", `url(assets/gifs/gif${caseStudyNum}.gif)`);
   }
 
-  function onLeaveHoverCaseStudy () {
+  /**
+   * onHoverLeaveCaseStudy
+   * 
+   * When we move off of hovering a case study, it will deactivate
+   * the GIF that is currently showing.
+   */
+
+  function onHoverLeaveCaseStudy () {
     let caseStudyNum = $(this).attr('data-cs');
     $(this).css("background-image", `url(assets/static/static${caseStudyNum}.PNG)`);
   }
 
+  function activateCaseStudyById () {
 
-  $(".case-study-wrapper").hover(onHoverCaseStudy, onLeaveHoverCaseStudy); 
+  }
+
+  function deactivateCaseStudyById () {
+
+  }
+
+  /**
+   * Get viewport height, gridTop and gridBottom
+   */
+
+  let windowHeight = window.innerHeight;
+  let gridTop = windowHeight * .15;
+  let gridBottom = windowHeight * .88;
+
+  /**
+   * TODO: This needs a little bit of tweaking
+   */
+
+  function onScroll () {
+
+    /**
+     * We will only check the scrolling event if the viewport
+     * is less than 1100px.
+     */
+
+    if ($(window).width() <= 1100) {
+
+      // On each scroll check if `case-study-wrapper` is in interested viewport
+      $('.case-study-wrapper').each(function() {
+
+        // Get the `top` of this `case-study-wrapper`
+        let thisTop = $(this).offset().top - $(window).scrollTop(); 
+
+        // Check if this element is in the interested viewport
+        if (thisTop >= gridTop && (thisTop + $(this).height()) <= gridBottom) {
+          let caseStudyNum = $(this).attr('data-cs');
+          console.log(thisTop, "this top");
+          console.log(gridTop, "gridTop"),
+          console.log($(this).height(), "this height")
+          console.log(gridBottom, "grid botton")
+          console.log("Should activate one", caseStudyNum)
+          $(this).css("background-image", `url(assets/gifs/gif${caseStudyNum}.gif)`);
+        } 
+        
+        else {
+          let caseStudyNum = $(this).attr('data-cs');
+          $(this).css("background-image", `url(assets/static/static${caseStudyNum}.PNG)`);
+        }
+      });
+    }
+  }
+
+  // Link event handlers
+  $(".case-study-wrapper").hover(onHoverCaseStudy, onHoverLeaveCaseStudy); 
+  $(window).on('scroll', onScroll);
 
 }
 
