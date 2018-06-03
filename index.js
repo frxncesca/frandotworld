@@ -19,7 +19,10 @@ function main () {
 
   function onHoverCaseStudy () {
     let caseStudyNum = $(this).attr('data-cs');
-    $(this).css("background-image", `url(assets/gifs/gif${caseStudyNum}.gif)`);
+    $(this)
+    .children()
+    .first()
+    .css("background-image", `url(assets/gifs/gif${caseStudyNum}.gif)`);
   }
 
   /**
@@ -31,15 +34,10 @@ function main () {
 
   function onHoverLeaveCaseStudy () {
     let caseStudyNum = $(this).attr('data-cs');
-    $(this).css("background-image", `url(assets/static/static${caseStudyNum}.PNG)`);
-  }
-
-  function activateCaseStudyById () {
-
-  }
-
-  function deactivateCaseStudyById () {
-
+    $(this)
+    .children()
+    .first()
+    .css("background-image", `url(assets/static/static${caseStudyNum}.PNG)`);
   }
 
   /**
@@ -47,8 +45,8 @@ function main () {
    */
 
   let windowHeight = window.innerHeight;
-  let gridTop = windowHeight * .15;
-  let gridBottom = windowHeight * .88;
+  let gridTop = windowHeight * .10;
+  let gridBottom = windowHeight * .90;
 
   /**
    * TODO: This needs a little bit of tweaking
@@ -72,17 +70,18 @@ function main () {
         // Check if this element is in the interested viewport
         if (thisTop >= gridTop && (thisTop + $(this).height()) <= gridBottom) {
           let caseStudyNum = $(this).attr('data-cs');
-          console.log(thisTop, "this top");
-          console.log(gridTop, "gridTop"),
-          console.log($(this).height(), "this height")
-          console.log(gridBottom, "grid botton")
-          console.log("Should activate one", caseStudyNum)
-          $(this).css("background-image", `url(assets/gifs/gif${caseStudyNum}.gif)`);
+          $(this)
+          .children()
+          .first()
+          .css("background-image", `url(assets/gifs/gif${caseStudyNum}.gif)`);
         } 
         
         else {
           let caseStudyNum = $(this).attr('data-cs');
-          $(this).css("background-image", `url(assets/static/static${caseStudyNum}.PNG)`);
+          $(this)
+          .children()
+          .first()
+          .css("background-image", `url(assets/static/static${caseStudyNum}.PNG)`);
         }
       });
     }
