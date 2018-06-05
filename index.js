@@ -10,6 +10,30 @@ function main () {
 
   console.log("Welcome to Fran world!");
 
+  function getAssetUrl (caseStudyNum, assetType) {
+    let onContactPage = !!~window.location.href.indexOf('contact');
+    
+    if (onContactPage) {
+      if (assetType == 'GIF') {
+        return `url(../assets/gifs/gif${caseStudyNum}.gif)`
+      }
+
+      else {
+        return `url(../assets/static/static${caseStudyNum}.PNG)`
+      }
+    }
+
+    else {
+      if (assetType == 'GIF') {
+        return `url(assets/gifs/gif${caseStudyNum}.gif)`
+      }
+
+      else {
+        return `url(assets/static/static${caseStudyNum}.PNG)`
+      }
+    }
+  }
+
   /**
    * onHoverCaseStudy
    * 
@@ -22,7 +46,7 @@ function main () {
     $(this)
     .children()
     .first()
-    .css("background-image", `url(assets/gifs/gif${caseStudyNum}.gif)`);
+    .css("background-image", getAssetUrl(caseStudyNum, 'GIF'));
   }
 
   /**
@@ -37,7 +61,7 @@ function main () {
     $(this)
     .children()
     .first()
-    .css("background-image", `url(assets/static/static${caseStudyNum}.PNG)`);
+    .css("background-image", getAssetUrl(caseStudyNum, 'STATIC'));
   }
 
   /**
@@ -73,7 +97,7 @@ function main () {
           $(this)
           .children()
           .first()
-          .css("background-image", `url(assets/gifs/gif${caseStudyNum}.gif)`);
+          .css("background-image", getAssetUrl(caseStudyNum, 'GIF'));
         } 
         
         else {
@@ -81,7 +105,7 @@ function main () {
           $(this)
           .children()
           .first()
-          .css("background-image", `url(assets/static/static${caseStudyNum}.PNG)`);
+          .css("background-image", getAssetUrl(caseStudyNum, 'STATIC'));
         }
       });
     }

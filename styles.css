@@ -1,7 +1,7 @@
 
 html, body {
   font-family: 'Roboto', sans-serif; 
-  font-size: 18px;
+  font-size: 16px;
   color: #313131;
   margin: 0;
   padding: 0;
@@ -16,11 +16,16 @@ h2 {
   font-weight: 300;
 }
 
+p {
+  margin-top:0px;
+  padding-top: 0px;
+}
+
 .home-container {
     padding: 5%;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 13%;
+    padding-bottom: 0%;
 }
 
 .home-container-nav {
@@ -51,6 +56,7 @@ h2 {
 .nav a {
   text-decoration: none;
   color: #313131; 
+      font-size: 18px;
 }
 
 @-moz-keyframes spin {
@@ -149,6 +155,7 @@ h2 {
     max-width: 700px;
     padding-left: 7%;
     padding-right: 7%;
+        padding-bottom: 5.5em;
 }
 
 .case-study-title {
@@ -159,6 +166,7 @@ h2 {
 
 .case-study-description {
   margin-bottom: 1.4em;
+      font-size: 18px;
 }
 
 .case-study-meta {
@@ -184,10 +192,10 @@ h2 {
 .case-study-inner-margin {
     padding-left: 17%;
     padding-right: 17%;
-    padding-top: 10%;
     /* padding-bottom: 10%; */
     max-width: 900px;
     margin: 0 auto;
+    padding-top: 4.5em;
 }
 
 .case-study-prose {
@@ -204,8 +212,6 @@ h2 {
 }
 
 .case-study-prose-left div {
-      font-size: 14px;
-    line-height: 1.5em;
 }
 
 .case-study-prose-long-image {
@@ -250,9 +256,7 @@ h2 {
 }
 
 .case-study-fourth > div {
-  width: 50%;
-  font-size: 14px;
-  line-height: 1.5em;
+    width: 50%;
 }
 
 .case-study-grid {
