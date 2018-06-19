@@ -46,7 +46,7 @@ p {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     /* height: 160px; */
-    height: 25%;
+    /* height: 25%; */
 }
 
 .nav {
