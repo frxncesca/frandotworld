@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Lemon/Milk';
+    src: url('LemonMilk.eot');
+    src: url('LemonMilk.eot?#iefix') format('embedded-opentype'),
+        url('LemonMilk.woff2') format('woff2'),
+        url('LemonMilk.woff') format('woff'),
+        url('LemonMilk.ttf') format('truetype'),
+        url('LemonMilk.svg#LemonMilk') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

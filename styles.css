@@ -1,6 +1,58 @@
+/* 
+ This is the definitive way to load fonts into your
+ web pages. There are a bunch of different urls here for each font
+ type. Different browsers support different font file types, so we 
+ should make sure that we have a font file type for each browser 
+ that our users may encounter.
+
+ Q: How do I get all of the different font file types?
+ A: You can use a tool like https://transfonter.org/ to 
+    generate your missing types from one source type. 
+
+ Q: OK, so how do I use a font after I've imported it?
+ A: Just call on it by the name that you've given it.
+    Example:
+      .hello-world > span {
+        font-family: 'LemonMilk';
+      }
+
+    You'll notice I've changed the html and body's fonts for you
+    as an example. You can change it back.
+  
+  Q: Why is my font not loading?
+  A: Because the font is actually being loaded from a location on
+     your hard drive, that implies that it needs to be "served" to
+     the browser. Serve. Web server. You need to be running a Web
+     Server to serve this web page (html file) and other files.
+
+     My favourite way to do this is to just install Node.js, 
+     confirm it's installed by running "node -v", then, navigate
+     to this project's root folder and type:
+
+     npm install -g live-server && live-server --port=9000
+
+     You should now have a web server running serving this project's
+     files on port 9000. Visit "localhost:9000" in your browser to see
+     the changes. (Hint: it will also update when you make live changes).
+*/
+
+/* 
+  Loading fonts.
+ */
+
+@font-face {
+  font-family: 'LemonMilk';  /* Give it a name, you can choose this. */
+  src: url('assets/fonts/lemon_milk/LemonMilk.eot'); /* IE9 Compat Modes */
+  src: url('assets/fonts/lemon_milk/LemonMilk.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('assets/fonts/lemon_milk/LemonMilk.woff2') format('woff2'), /* Super Modern Browsers */
+       url('assets/fonts/lemon_milk/LemonMilk.woff') format('woff'), /* Pretty Modern Browsers */
+       url('assets/fonts/lemon_milk/LemonMilk.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('assets/fonts/lemon_milk/LemonMilk.svg#LemonMilk') format('svg'); /* Legacy iOS */
+}
 
 html, body {
-  font-family: 'Roboto', sans-serif; 
+  /* font-family: 'Roboto', sans-serif;  */
+  font-family: 'LemonMilk'; /* Comment this out */
   font-size: 16px;
   color: #313131;
   margin: 0;
